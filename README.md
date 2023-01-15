@@ -1,4 +1,4 @@
-# expenses
+# Despesas Pessoais em Flutter
 
 Projeto de despesas pessoais para o controle de gastos
 
