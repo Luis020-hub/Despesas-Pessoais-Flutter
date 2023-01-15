@@ -1,6 +1,6 @@
-# expenses
+# Despesas Pessoais em Flutter
 
-A new Flutter project.
+Projeto com objetivo de controlar seus gastos
 
 ## Getting Started
 
