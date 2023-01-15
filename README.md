@@ -1,6 +1,6 @@
 # Despesas Pessoais em Flutter
 
-Projeto de despesas pessoais para o controle de gastos
+Projeto com objetivo de controlar seus gastos
 
 ## Getting Started
 
