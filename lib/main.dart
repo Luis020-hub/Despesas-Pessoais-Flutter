@@ -1,6 +1,4 @@
-import 'package:expenses/components/transaction_form.dart';
 import 'package:flutter/material.dart';
-
 import 'dart:math';
 import './components/transaction_form.dart';
 import './components/transaction_list.dart';
@@ -12,8 +10,12 @@ class ExpensesApp extends StatelessWidget {
   const ExpensesApp({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
-      home: MyHomePage(),
+    return MaterialApp(
+      home: const MyHomePage(),
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSwatch(primarySwatch: Colors.indigo)
+            .copyWith(secondary: Colors.grey[600]),
+      ),
     );
   }
 }
@@ -81,11 +83,17 @@ class _MyHomePageState extends State<MyHomePage> {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: <Widget>[
-            const SizedBox(
+            SizedBox(
               child: Card(
-                color: Colors.blue,
+                color: Theme.of(context).colorScheme.secondary,
                 elevation: 5,
-                child: Text('Graphic'),
+                child: const Text(
+                  'Graphic',
+                  style: TextStyle(
+                    fontSize: 18,
+                    color: Colors.white,
+                  ),
+                ),
               ),
             ),
             TransactionList(_transactions),

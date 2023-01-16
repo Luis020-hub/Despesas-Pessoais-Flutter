@@ -41,7 +41,8 @@ class _TransactionFormState extends State<TransactionForm> {
             ),
             TextField(
               controller: valueController,
-              keyboardType: TextInputType.numberWithOptions(decimal: true),
+              keyboardType:
+                  const TextInputType.numberWithOptions(decimal: true),
               onSubmitted: (_) => _submitForm(),
               decoration: const InputDecoration(
                 labelText: 'Value (R\$)',
@@ -52,10 +53,10 @@ class _TransactionFormState extends State<TransactionForm> {
               children: <Widget>[
                 TextButton(
                   onPressed: (_submitForm),
-                  child: const Text(
+                  child: Text(
                     'New Transaction',
                     style: TextStyle(
-                      color: Colors.purple,
+                      color: Theme.of(context).colorScheme.primary,
                       backgroundColor: Colors.transparent,
                       fontSize: 16,
                     ),
