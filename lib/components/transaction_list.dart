@@ -35,6 +35,7 @@ class TransactionList extends StatelessWidget {
                     style: TextStyle(
                       fontWeight: FontWeight.bold,
                       fontSize: 18,
+                      fontFamily: 'BarlowCondensed',
                       color: Theme.of(context).colorScheme.primary,
                     ),
                   ),
@@ -44,10 +45,11 @@ class TransactionList extends StatelessWidget {
                   children: [
                     Text(
                       tr.title,
-                      style: const TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 16,
-                      ),
+                      style: Theme.of(context).textTheme.headline6,
+                      // style: const TextStyle(
+                      //   fontWeight: FontWeight.bold,
+                      //   fontSize: 16,
+                      // ),
                     ),
                     Text(
                       DateFormat.yMMMd().format(tr.date),
