@@ -6,9 +6,9 @@ import 'chart_bar.dart';
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransaction;
 
-  Chart(this.recentTransaction);
+  const Chart(this.recentTransaction, {super.key});
 
-  List<Map<String, Object>> get groupedTransactions {
+  List<Map<String, dynamic>> get groupedTransactions {
     return List.generate(7, (index) {
       final weekDay = DateTime.now().subtract(
         Duration(days: index),
@@ -33,18 +33,23 @@ class Chart extends StatelessWidget {
     });
   }
 
+  double get _weekTotalValue {
+    return groupedTransactions.fold(0.0, (sum, tr) {
+      return sum + tr['value'];
+    });
+  }
+
   @override
   Widget build(BuildContext context) {
-    groupedTransactions;
     return Card(
       elevation: 6,
-      margin: EdgeInsets.all(20),
+      margin: const EdgeInsets.all(20),
       child: Row(
         children: groupedTransactions.map((tr) {
           return ChartBar(
             label: tr['day'].toString(),
             value: tr['value'] as double,
-            percent: 0.6,
+            percent: (tr['value'] as double) / _weekTotalValue,
           );
         }).toList(),
       ),

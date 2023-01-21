@@ -4,7 +4,6 @@ import 'dart:math';
 import './components/transaction_form.dart';
 import './components/transaction_list.dart';
 import 'models/transaction.dart';
-import 'components/chart.dart';
 
 main() => runApp(ExpensesApp());
 
@@ -72,7 +71,7 @@ class _MyHomePageState extends State<MyHomePage> {
   List<Transaction> get _recentTransactions {
     return _transactions.where((tr) {
       return tr.date.isAfter(DateTime.now().subtract(
-        Duration(days: 7),
+        const Duration(days: 7),
       ));
     }).toList();
   }
