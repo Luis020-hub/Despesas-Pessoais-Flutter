@@ -6,9 +6,9 @@ import 'chart_bar.dart';
 class Chart extends StatelessWidget {
   final List<Transaction> recentTransaction;
 
-  const Chart(this.recentTransaction, {super.key});
+  const Chart(this.recentTransaction, {Key? key}) : super(key: key);
 
-  List<Map<String, dynamic>> get groupedTransactions {
+  List<Map<String, Object>> get groupedTransactions {
     return List.generate(7, (index) {
       final weekDay = DateTime.now().subtract(
         Duration(days: index),
@@ -30,12 +30,12 @@ class Chart extends StatelessWidget {
         'day': DateFormat.E().format(weekDay)[0],
         'value': totalSum,
       };
-    });
+    }).reversed.toList();
   }
 
   double get _weekTotalValue {
     return groupedTransactions.fold(0.0, (sum, tr) {
-      return sum + tr['value'];
+      return sum + (tr['value'] as double);
     });
   }
 
