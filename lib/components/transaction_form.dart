@@ -15,7 +15,7 @@ class _TransactionFormState extends State<TransactionForm> {
 
   _submitForm() {
     final title = titleController.text;
-    final value = double.tryParse(valueController.text) ?? 0.0;
+    final value = double.tryParse(valueController.text) ?? 0;
 
     if (title.isEmpty || value <= 0) {
       return;
@@ -48,17 +48,32 @@ class _TransactionFormState extends State<TransactionForm> {
                 labelText: 'Value (R\$)',
               ),
             ),
+            SizedBox(
+              height: 70,
+              child: Row(
+                children: <Widget>[
+                  const Text('No selected date!'),
+                  TextButton(
+                    child: const Text(
+                      'Select date',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                    onPressed: () {},
+                  )
+                ],
+              ),
+            ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisAlignment: MainAxisAlignment.end,
               children: <Widget>[
-                TextButton(
+                ElevatedButton(
                   onPressed: (_submitForm),
                   child: Text(
                     'New Transaction',
                     style: TextStyle(
-                      color: Theme.of(context).colorScheme.primary,
-                      backgroundColor: Colors.transparent,
-                      fontSize: 16,
+                      color: Theme.of(context).textTheme.button?.color,
                     ),
                   ),
                 ),
