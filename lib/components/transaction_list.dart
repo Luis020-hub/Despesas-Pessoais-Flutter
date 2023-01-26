@@ -24,6 +24,7 @@ class TransactionList extends StatelessWidget {
                   child: Image.asset(
                     'assets/images/waiting.png',
                     fit: BoxFit.cover,
+                    width: 100,
                   ),
                 ),
               ],
