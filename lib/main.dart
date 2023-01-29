@@ -143,12 +143,12 @@ class _MyHomePageState extends State<MyHomePage> {
             //   ),
             if (_showChart || !isLandscape)
               SizedBox(
-                height: avaibleHeight * (isLandscape ? 0.63 : 0.26),
+                height: avaibleHeight * (isLandscape ? /* Paisagem -> */ 0.80  : /* Retrato -> */ 0.25 ),
                 child: Chart(_recentTransactions),
               ),
             if (!_showChart || !isLandscape)
               SizedBox(
-                height: avaibleHeight * 0.63,
+                height: avaibleHeight * (isLandscape ? /* Paisagem -> */ 0.9 :  /* Retrato -> */ 0.63),
                 child: TransactionList(_transactions, _removeTransaction),
               ),
           ],
