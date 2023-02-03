@@ -66,7 +66,7 @@ class _TransactionFormState extends State<TransactionForm> {
                 mainAxisAlignment: MainAxisAlignment.end,
                 children: <Widget>[
                   AdaptativeButton(
-                    'Nova Transação',
+                    'New Transaction',
                     _submitForm,
                   ),
                 ],

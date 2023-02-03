@@ -128,7 +128,7 @@ class _MyHomePageState extends State<MyHomePage> {
     ];
 
     final PreferredSizeWidget appBar = AppBar(
-      title: const Text('Despesas Pessoais'),
+      title: const Text('Expenses'),
       actions: actions,
     );
 
